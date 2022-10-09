@@ -1,0 +1,6 @@
+groups:
+  - name: SampleName
+    rules:
+      - record: http_count_error_codes
+        expr:
+          sum(increase(prometheus_http_requests_total{code!=~"200"}[24h]))
